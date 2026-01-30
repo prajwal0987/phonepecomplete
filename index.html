@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <title>PhonePe PG – KYC Completion</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://cdn.c360a.salesforce.com/beacon/c360a/f580fe04-1d27-4c73-a179-b71440c40397/scripts/c360a.min.js"> </script>
+    <script src="https://cdn.c360a.salesforce.com/beacon/c360a/f580fe04-1d27-4c73-a179-b71440c40397/scripts/c360a.min.js"> </script>
+
 <style>
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f4f6f8;
     margin: 0;
-    padding: 0;
 }
 
-/* Common container */
+/* Container */
 .container {
     max-width: 900px;
     margin: 50px auto;
@@ -23,22 +23,17 @@ body {
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/* Headings */
 h1 {
     color: #5f259f;
-    margin-bottom: 15px;
 }
 
 h2 {
     color: #333;
-    margin-bottom: 15px;
 }
 
-/* Text */
 p {
     color: #555;
     line-height: 1.7;
-    font-size: 16px;
 }
 
 /* Info box */
@@ -50,7 +45,7 @@ p {
     border-radius: 6px;
 }
 
-/* CTA box */
+/* CTA */
 .cta-box {
     text-align: center;
     margin-top: 40px;
@@ -67,22 +62,27 @@ p {
     text-decoration: none;
     font-size: 16px;
     border-radius: 6px;
-    transition: 0.3s ease;
 }
 
 .cta-btn:hover {
     background: #4a1d80;
 }
 
-/* ===== Form Section ===== */
-.form-section {
-    margin-top: 80px;
+/* ===== Hidden KYC Section ===== */
+#kyc-form {
+    display: none;
 }
 
+/* Show only when button clicked */
+#kyc-form:target {
+    display: block;
+    margin-top: 60px;
+}
+
+/* Form styles */
 label {
     display: block;
     margin-bottom: 8px;
-    color: #333;
     font-weight: bold;
 }
 
@@ -92,12 +92,6 @@ input, select {
     margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 14px;
-}
-
-input:focus, select:focus {
-    border-color: #5f259f;
-    outline: none;
 }
 
 .submit-btn {
@@ -118,7 +112,6 @@ input:focus, select:focus {
 .note {
     font-size: 13px;
     color: #777;
-    margin-top: 15px;
 }
 </style>
 </head>
@@ -130,36 +123,30 @@ input:focus, select:focus {
     <h1>PhonePe Payment Gateway – KYC Process</h1>
 
     <p>
-        PhonePe Payment Gateway enables merchants to accept digital payments securely
-        and efficiently. As per regulatory requirements, completing KYC is mandatory
-        to continue uninterrupted payment services.
+        PhonePe Payment Gateway enables secure digital payments for merchants.
+        As per compliance requirements, KYC completion is mandatory to continue
+        receiving settlements.
     </p>
 
     <div class="info-box">
-        <p>
-            <strong>Why is KYC important?</strong><br>
-            KYC helps verify merchant identity, ensures compliance with RBI guidelines,
-            and prevents fraudulent transactions.
-        </p>
+        <strong>Why KYC?</strong><br>
+        Identity verification, fraud prevention, and regulatory compliance.
     </div>
 
-    <p>
-        Benefits of completing KYC:
-        <ul>
-            <li>Seamless payment acceptance</li>
-            <li>Faster settlements</li>
-            <li>Regulatory compliance</li>
-        </ul>
-    </p>
+    <ul>
+        <li>Uninterrupted payment services</li>
+        <li>Faster settlements</li>
+        <li>RBI compliance</li>
+    </ul>
 
     <div class="cta-box">
         <h2>Ready to Complete Your KYC?</h2>
-        <a href="#kyc-form" class="cta-btn">Complete KYC Now</a>
+        <a href="#kyc-form" class="cta-btn">Proceed to KYC</a>
     </div>
 </div>
 
-<!-- ===== KYC Form Section ===== -->
-<div class="container form-section" id="kyc-form">
+<!-- ===== KYC FORM (Hidden initially) ===== -->
+<div class="container" id="kyc-form">
     <h1>KYC Completion Form</h1>
 
     <form>
@@ -189,14 +176,12 @@ input:focus, select:focus {
             <option>Passport</option>
         </select>
 
-        <button type="submit" class="submit-btn">
-            Submit KYC Details
-        </button>
+        <button type="submit" class="submit-btn">Submit KYC</button>
     </form>
 
     <p class="note">
-        This form captures engagement for KYC completion. Further verification will be
-        completed as per PhonePe policies.
+        This form captures engagement for KYC completion. Verification will be
+        processed as per PhonePe guidelines.
     </p>
 </div>
 
