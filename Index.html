@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PhonePe PG – KYC Completion</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Common container */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Headings */
+h1 {
+    color: #5f259f;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Text */
+p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* Info box */
+.info-box {
+    background: #faf7ff;
+    border-left: 5px solid #5f259f;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 6px;
+}
+
+/* CTA box */
+.cta-box {
+    text-align: center;
+    margin-top: 40px;
+    padding: 30px;
+    border: 2px dashed #5f259f;
+    border-radius: 10px;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background: #5f259f;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #4a1d80;
+}
+
+/* ===== Form Section ===== */
+.form-section {
+    margin-top: 80px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    border-color: #5f259f;
+    outline: none;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: #5f259f;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #4a1d80;
+}
+
+.note {
+    font-size: 13px;
+    color: #777;
+    margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== Intro Section ===== -->
+<div class="container">
+    <h1>PhonePe Payment Gateway – KYC Process</h1>
+
+    <p>
+        PhonePe Payment Gateway enables merchants to accept digital payments securely
+        and efficiently. As per regulatory requirements, completing KYC is mandatory
+        to continue uninterrupted payment services.
+    </p>
+
+    <div class="info-box">
+        <p>
+            <strong>Why is KYC important?</strong><br>
+            KYC helps verify merchant identity, ensures compliance with RBI guidelines,
+            and prevents fraudulent transactions.
+        </p>
+    </div>
+
+    <p>
+        Benefits of completing KYC:
+        <ul>
+            <li>Seamless payment acceptance</li>
+            <li>Faster settlements</li>
+            <li>Regulatory compliance</li>
+        </ul>
+    </p>
+
+    <div class="cta-box">
+        <h2>Ready to Complete Your KYC?</h2>
+        <a href="#kyc-form" class="cta-btn">Complete KYC Now</a>
+    </div>
+</div>
+
+<!-- ===== KYC Form Section ===== -->
+<div class="container form-section" id="kyc-form">
+    <h1>KYC Completion Form</h1>
+
+    <form>
+        <label>Merchant Name</label>
+        <input type="text" placeholder="Enter Merchant Name">
+
+        <label>Registered Mobile Number</label>
+        <input type="tel" placeholder="Enter Mobile Number">
+
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter Email">
+
+        <label>Business Type</label>
+        <select>
+            <option>Select Business Type</option>
+            <option>Individual</option>
+            <option>Proprietorship</option>
+            <option>Partnership</option>
+            <option>Private Limited</option>
+        </select>
+
+        <label>KYC Document Type</label>
+        <select>
+            <option>Select Document</option>
+            <option>PAN Card</option>
+            <option>Aadhaar Card</option>
+            <option>Passport</option>
+        </select>
+
+        <button type="submit" class="submit-btn">
+            Submit KYC Details
+        </button>
+    </form>
+
+    <p class="note">
+        This form captures engagement for KYC completion. Further verification will be
+        completed as per PhonePe policies.
+    </p>
+</div>
+
+</body>
+</html>
