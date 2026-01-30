@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <title>PhonePe PG – KYC Completion</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.c360a.salesforce.com/beacon/c360a/f580fe04-1d27-4c73-a179-b71440c40397/scripts/c360a.min.js"> </script>
-
+<script src: "https://cdn.c360a.salesforce.com/beacon/c360a/f580fe04-1d27-4c73-a179-b71440c40397/scripts/c360a.min.js"> </script>
 <style>
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -13,7 +12,6 @@ body {
     margin: 0;
 }
 
-/* Container */
 .container {
     max-width: 900px;
     margin: 50px auto;
@@ -27,16 +25,11 @@ h1 {
     color: #5f259f;
 }
 
-h2 {
-    color: #333;
-}
-
 p {
     color: #555;
     line-height: 1.7;
 }
 
-/* Info box */
 .info-box {
     background: #faf7ff;
     border-left: 5px solid #5f259f;
@@ -55,28 +48,35 @@ p {
 }
 
 .cta-btn {
-    display: inline-block;
     padding: 14px 35px;
     background: #5f259f;
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
     border-radius: 6px;
 }
 
-.cta-btn:hover {
-    background: #4a1d80;
-}
-
-/* ===== Hidden KYC Section ===== */
-#kyc-form {
+/* ===== Hidden Sections ===== */
+#kyc-section,
+#submitted {
     display: none;
 }
 
-/* Show only when button clicked */
-#kyc-form:target {
+/* Show KYC Form */
+#kyc-section:target {
     display: block;
     margin-top: 60px;
+}
+
+/* Hide KYC when submitted */
+#submitted:target ~ #kyc-section {
+    display: none;
+}
+
+/* Show success */
+#submitted:target {
+    display: block;
+    margin-top: 60px;
+    text-align: center;
 }
 
 /* Form styles */
@@ -100,77 +100,83 @@ input, select {
     background: #5f259f;
     color: #fff;
     border: none;
-    font-size: 16px;
     border-radius: 6px;
+    font-size: 16px;
     cursor: pointer;
 }
 
-.submit-btn:hover {
-    background: #4a1d80;
+/* Success box */
+.success-box {
+    background: #f0fff6;
+    border: 2px solid #28a745;
+    padding: 40px;
+    border-radius: 10px;
 }
 
-.note {
-    font-size: 13px;
-    color: #777;
+.success-box h1 {
+    color: #28a745;
 }
 </style>
 </head>
 
 <body>
 
-<!-- ===== Intro Section ===== -->
+<!-- ===== Intro ===== -->
 <div class="container">
     <h1>PhonePe Payment Gateway – KYC Process</h1>
 
     <p>
-        PhonePe Payment Gateway enables secure digital payments for merchants.
-        As per compliance requirements, KYC completion is mandatory to continue
-        receiving settlements.
+        To continue using PhonePe Payment Gateway services, completing your
+        KYC is mandatory as per regulatory guidelines.
     </p>
 
     <div class="info-box">
-        <strong>Why KYC?</strong><br>
-        Identity verification, fraud prevention, and regulatory compliance.
+        Identity verification ensures secure payments and faster settlements.
     </div>
-
-    <ul>
-        <li>Uninterrupted payment services</li>
-        <li>Faster settlements</li>
-        <li>RBI compliance</li>
-    </ul>
 
     <div class="cta-box">
         <h2>Ready to Complete Your KYC?</h2>
-        <a href="#kyc-form" class="cta-btn">Proceed to KYC</a>
+        <a href="#kyc-section" class="cta-btn">Proceed to KYC</a>
     </div>
 </div>
 
-<!-- ===== KYC FORM (Hidden initially) ===== -->
-<div class="container" id="kyc-form">
+<!-- ===== Success Message ===== -->
+<div class="container" id="submitted">
+    <div class="success-box">
+        <h1>✅ KYC Submitted Successfully</h1>
+        <p>
+            Thank you for submitting your KYC details.  
+            Our team will review the information and update you shortly.
+        </p>
+    </div>
+</div>
+
+<!-- ===== KYC Form ===== -->
+<div class="container" id="kyc-section">
     <h1>KYC Completion Form</h1>
 
-    <form>
+    <form action="#submitted">
         <label>Merchant Name</label>
-        <input type="text" placeholder="Enter Merchant Name">
+        <input type="text" required>
 
-        <label>Registered Mobile Number</label>
-        <input type="tel" placeholder="Enter Mobile Number">
+        <label>Mobile Number</label>
+        <input type="tel" required>
 
         <label>Email Address</label>
-        <input type="email" placeholder="Enter Email">
+        <input type="email" required>
 
         <label>Business Type</label>
-        <select>
-            <option>Select Business Type</option>
+        <select required>
+            <option value="">Select</option>
             <option>Individual</option>
             <option>Proprietorship</option>
             <option>Partnership</option>
             <option>Private Limited</option>
         </select>
 
-        <label>KYC Document Type</label>
-        <select>
-            <option>Select Document</option>
+        <label>KYC Document</label>
+        <select required>
+            <option value="">Select</option>
             <option>PAN Card</option>
             <option>Aadhaar Card</option>
             <option>Passport</option>
@@ -178,11 +184,6 @@ input, select {
 
         <button type="submit" class="submit-btn">Submit KYC</button>
     </form>
-
-    <p class="note">
-        This form captures engagement for KYC completion. Verification will be
-        processed as per PhonePe guidelines.
-    </p>
 </div>
 
 </body>
